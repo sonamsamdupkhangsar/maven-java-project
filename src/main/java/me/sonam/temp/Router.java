@@ -20,9 +20,9 @@ public class Router {
     private static final Logger LOG = LoggerFactory.getLogger(Router.class);
 
     @Bean
-    public RouterFunction<ServerResponse> route(Handler emailHandler) {
+    public RouterFunction<ServerResponse> route(Handler handler) {
         LOG.info("building router function");
         return RouterFunctions.route(POST("/path").and(accept(MediaType.APPLICATION_JSON)),
-                emailHandler::email);
+                handler::handle);
     }
 }

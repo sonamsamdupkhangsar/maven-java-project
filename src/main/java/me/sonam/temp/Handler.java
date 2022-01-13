@@ -17,7 +17,7 @@ public class Handler {
     /**
      * outline only
      */
-    public Mono<ServerResponse> email(ServerRequest serverRequest) {
+    public Mono<ServerResponse> handle(ServerRequest serverRequest) {
         return ServerResponse.ok().build();
     }
 }
